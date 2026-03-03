@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iPhone Store - Loja Oficial</title>
+    <title>THEOSMIN - Loja Oficial</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -787,6 +787,51 @@
         .product-card {
             animation: fadeIn 0.6s ease-out;
         }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float .whatsapp-tooltip {
+            position: absolute;
+            right: 70px;
+            background: #fff;
+            color: #333;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -794,9 +839,9 @@
     <!-- Header -->
     <header>
         <nav>
-            <a href="#" class="logo" onclick="showToast('Bem-vindo à iPhone Store!')">
+            <a href="#" class="logo" onclick="showToast('Bem-vindo à THEOSMIN!')">
                 <i class="fab fa-apple"></i>
-                <span>iPhone Store</span>
+                <span>THEOSMIN</span>
             </a>
             <ul class="nav-links">
                 <li><a onclick="scrollToSection('products')">iPhone</a></li>
@@ -1017,7 +1062,7 @@
                 <h3>Configurações da Loja</h3>
                 <div class="form-group">
                     <label>Nome da Loja</label>
-                    <input type="text" id="storeName" value="iPhone Store" onchange="updateStore()">
+                    <input type="text" id="storeName" value="THEOSMIN" onchange="updateStore()">
                 </div>
                 <div class="form-group">
                     <label>Telefone de Contato (WhatsApp)</label>
@@ -1056,6 +1101,12 @@
         </div>
     </div>
 
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5545999521277" target="_blank" class="whatsapp-float" aria-label="Contato via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Fale conosco no WhatsApp</span>
+    </a>
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
@@ -1089,7 +1140,7 @@
             <div class="footer-section">
                 <h4>Contato</h4>
                 <ul>
-                    <li><a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                    <li><a href="https://wa.me/5545999521277" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
                     <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
                     <li><a href="#"><i class="fas fa-envelope"></i> E-mail</a></li>
                     <li><a href="#"><i class="fas fa-map-marker-alt"></i> São Paulo, SP</a></li>
@@ -1097,7 +1148,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 iPhone Store. Todos os direitos reservados. <br>
+            <p>&copy; 2024 THEOSMIN. Todos os direitos reservados. <br>
             <small>CNPJ: 00.000.000/0000-00 | Endereço: Av. Paulista, 1000 - São Paulo/SP</small></p>
         </div>
     </footer>
@@ -1112,10 +1163,10 @@
         
         // Dados da loja - EDITE AQUI ou pelo painel admin
         let storeConfig = {
-            name: "iPhone Store",
-            phone: "(11) 99999-9999",
+            name: "THEOSMIN",
+            phone: "(45) 99952-1277",
             primaryColor: "#0071e3",
-            whatsappLink: "https://wa.me/5511999999999"
+            whatsappLink: "https://wa.me/5545999521277"
         };
 
         // Produtos - EDITE AQUI ou pelo painel admin
