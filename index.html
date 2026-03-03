@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iPhone Store - Loja Oficial</title>
+    <title>THEOSMIN - Loja Oficial</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -787,6 +787,51 @@
         .product-card {
             animation: fadeIn 0.6s ease-out;
         }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float .whatsapp-tooltip {
+            position: absolute;
+            right: 70px;
+            background: #fff;
+            color: #333;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -794,12 +839,13 @@
     <!-- Header -->
     <header>
         <nav>
-            <a href="#" class="logo" onclick="showToast('Bem-vindo à iPhone Store!')">
+            <a href="#" class="logo" onclick="showToast('Bem-vindo à THEOSMIN!')">
                 <i class="fab fa-apple"></i>
-                <span>iPhone Store</span>
+                <span>THEOSMIN</span>
             </a>
             <ul class="nav-links">
                 <li><a onclick="scrollToSection('products')">iPhone</a></li>
+                <li><a onclick="scrollToSection('products')">Apple Watch</a></li>
                 <li><a onclick="scrollToSection('products')">AirPods</a></li>
                 <li><a onclick="scrollToSection('products')">Acessórios</a></li>
                 <li><a onclick="openAdmin()">Admin</a></li>
@@ -813,8 +859,8 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>iPhone 15 Pro</h1>
-        <p>Titânio. Tão forte. Tão leve. Tão Pro.</p>
+        <h1>iPhone 17 Pro</h1>
+        <p>Chip A19 Pro. Câmera 48MP com Zoom 8x. Alumínio forjado.</p>
         <div class="hero-buttons">
             <a href="#products" class="btn btn-primary">Comprar Agora</a>
             <a href="#products" class="btn btn-secondary">Saiba Mais <i class="fas fa-chevron-right"></i></a>
@@ -824,8 +870,8 @@
     <!-- Products Section -->
     <section class="products-section" id="products">
         <div class="section-header">
-            <h2>Escolha o seu iPhone</h2>
-            <p>Modelos disponíveis com garantia Apple de 1 ano</p>
+            <h2>Nossos Produtos</h2>
+            <p>iPhone, Apple Watch e acessórios com garantia Apple de 1 ano</p>
         </div>
         <div class="products-grid" id="productsGrid">
             <!-- Products will be rendered here by JavaScript -->
@@ -1017,7 +1063,7 @@
                 <h3>Configurações da Loja</h3>
                 <div class="form-group">
                     <label>Nome da Loja</label>
-                    <input type="text" id="storeName" value="iPhone Store" onchange="updateStore()">
+                    <input type="text" id="storeName" value="THEOSMIN" onchange="updateStore()">
                 </div>
                 <div class="form-group">
                     <label>Telefone de Contato (WhatsApp)</label>
@@ -1056,15 +1102,23 @@
         </div>
     </div>
 
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5545999521277" target="_blank" class="whatsapp-float" aria-label="Contato via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Fale conosco no WhatsApp</span>
+    </a>
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <h4>Produtos</h4>
                 <ul>
-                    <li><a href="#">iPhone 15 Pro</a></li>
-                    <li><a href="#">iPhone 15</a></li>
-                    <li><a href="#">iPhone 14</a></li>
+                    <li><a href="#">iPhone 17 Pro</a></li>
+                    <li><a href="#">iPhone 17</a></li>
+                    <li><a href="#">iPhone Air</a></li>
+                    <li><a href="#">iPhone 17e</a></li>
+                    <li><a href="#">Apple Watch</a></li>
                     <li><a href="#">AirPods</a></li>
                 </ul>
             </div>
@@ -1089,7 +1143,7 @@
             <div class="footer-section">
                 <h4>Contato</h4>
                 <ul>
-                    <li><a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                    <li><a href="https://wa.me/5545999521277" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
                     <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
                     <li><a href="#"><i class="fas fa-envelope"></i> E-mail</a></li>
                     <li><a href="#"><i class="fas fa-map-marker-alt"></i> São Paulo, SP</a></li>
@@ -1097,7 +1151,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 iPhone Store. Todos os direitos reservados. <br>
+            <p>&copy; 2024 THEOSMIN. Todos os direitos reservados. <br>
             <small>CNPJ: 00.000.000/0000-00 | Endereço: Av. Paulista, 1000 - São Paulo/SP</small></p>
         </div>
     </footer>
@@ -1112,60 +1166,232 @@
         
         // Dados da loja - EDITE AQUI ou pelo painel admin
         let storeConfig = {
-            name: "iPhone Store",
-            phone: "(11) 99999-9999",
+            name: "THEOSMIN",
+            phone: "(45) 99952-1277",
             primaryColor: "#0071e3",
-            whatsappLink: "https://wa.me/5511999999999"
+            whatsappLink: "https://wa.me/5545999521277"
         };
 
         // Produtos - EDITE AQUI ou pelo painel admin
         let products = [
+            // ========== LINHA iPHONE 17 ==========
+            {
+                id: 17,
+                name: "iPhone 17 Pro Max",
+                description: "Tela de 6,9. Chip A19 Pro. Câmera tripla de 48MP. Zoom óptico 8x. Até 2TB.",
+                price: 12499.00,
+                originalPrice: 13999.00,
+                image: "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-pro-max-finish-select-silver-202509_AV1?wid=5120&hei=2880&fmt=jpeg&qlt=90",
+                colors: ["#E8833A", "#1A3A6E", "#C0C0C0"],
+                badge: "Lançamento",
+                stock: 8
+            },
+            {
+                id: 18,
+                name: "iPhone 17 Pro",
+                description: "Tela de 6,3. Chip A19 Pro. Câmera tripla de 48MP. Zoom óptico 8x.",
+                price: 11499.00,
+                originalPrice: 12999.00,
+                image: "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-pro-model-unselect-gallery-1-202509?wid=5120&hei=2880&fmt=jpeg&qlt=90",
+                colors: ["#E8833A", "#1A3A6E", "#C0C0C0"],
+                badge: "Lançamento",
+                stock: 10
+            },
+            {
+                id: 19,
+                name: "iPhone Air",
+                description: "Tela de 6,5. Chip A19 Pro. O iPhone mais fino de todos. Titânio.",
+                price: 10499.00,
+                originalPrice: 11999.00,
+                image: "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-air-gallery-2-202509?wid=5120&hei=2880&fmt=jpeg&qlt=90",
+                colors: ["#87CEEB", "#DAC896", "#F5F5F7", "#2C2C2C"],
+                badge: "Novo",
+                stock: 12
+            },
+            {
+                id: 20,
+                name: "iPhone 17",
+                description: "Tela de 6,3. Chip A19. ProMotion 120Hz. Câmera dupla de 48MP.",
+                price: 7999.00,
+                originalPrice: 8999.00,
+                image: "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-gallery-1-202509?wid=5120&hei=2880&fmt=jpeg&qlt=90",
+                colors: ["#C8A2C8", "#B0C4DE", "#8FBC8F", "#2C2C2C", "#F5F5F7"],
+                badge: "Novo",
+                stock: 15
+            },
+            {
+                id: 21,
+                name: "iPhone 17e",
+                description: "Tela de 6,1. Chip A19. Ceramic Shield 2. Câmera Fusion 48MP.",
+                price: 5799.00,
+                originalPrice: 6499.00,
+                image: "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17e-gallery-1-202603?wid=5120&hei=2880&fmt=jpeg&qlt=90",
+                colors: ["#2C2C2C", "#F5F5F7", "#FFB6C1"],
+                badge: "Novo",
+                stock: 20
+            },
+            // ========== LINHA iPHONE 16 ==========
             {
                 id: 1,
-                name: "iPhone 15 Pro Max",
-                description: "Tela de 6,7. Chip A17 Pro. Câmera de 48MP.",
-                price: 9499.00,
-                originalPrice: 10499.00,
-                image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch-naturaltitanium?wid=5120&hei=2880&fmt=webp&qlt=70&.v=1692845702708",
-                colors: ["#8B7F76", "#4A4A4A", "#F5F5F7", "#2C2C2C"],
-                badge: "Novo",
+                name: "iPhone 16 Pro Max",
+                description: "Tela de 6,9. Chip A18 Pro. Câmera de 48MP. Botão de Controle da Câmera.",
+                price: 10499.00,
+                originalPrice: 11499.00,
+                image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-9inch-deserttitanium?wid=5120&hei=2880&fmt=jpeg&qlt=90",
+                colors: ["#C2B292", "#4A4A4A", "#F5F5F7", "#2C2C2C"],
+                badge: "Lançamento",
                 stock: 10
             },
             {
                 id: 2,
+                name: "iPhone 16 Pro",
+                description: "Tela de 6,3. Chip A18 Pro. Titânio. Controle da Câmera.",
+                price: 8999.00,
+                originalPrice: 9999.00,
+                image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-deserttitanium?wid=5120&hei=2880&fmt=jpeg&qlt=90",
+                colors: ["#C2B292", "#4A4A4A", "#F5F5F7", "#2C2C2C"],
+                badge: "Lançamento",
+                stock: 12
+            },
+            {
+                id: 3,
+                name: "iPhone 16 Plus",
+                description: "Tela de 6,7. Chip A18. Câmera de 48MP. Dynamic Island.",
+                price: 7799.00,
+                originalPrice: 8499.00,
+                image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-7inch-ultramarine?wid=5120&hei=2880&fmt=jpeg&qlt=90",
+                colors: ["#4B6EA9", "#87CEAB", "#FFB6C1", "#F5F5F7", "#2C2C2C"],
+                badge: null,
+                stock: 15
+            },
+            {
+                id: 4,
+                name: "iPhone 16",
+                description: "Tela de 6,1. Chip A18. Câmera de 48MP. Dynamic Island.",
+                price: 6999.00,
+                originalPrice: 7499.00,
+                image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-ultramarine?wid=5120&hei=2880&fmt=jpeg&qlt=90",
+                colors: ["#4B6EA9", "#87CEAB", "#FFB6C1", "#F5F5F7", "#2C2C2C"],
+                badge: "Novo",
+                stock: 20
+            },
+            // ========== LINHA iPHONE 15 ==========
+            {
+                id: 5,
+                name: "iPhone 15 Pro Max",
+                description: "Tela de 6,7. Chip A17 Pro. Câmera de 48MP. Titânio.",
+                price: 9499.00,
+                originalPrice: 10499.00,
+                image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch-naturaltitanium?wid=5120&hei=2880&fmt=jpeg&qlt=90",
+                colors: ["#8B7F76", "#4A4A4A", "#F5F5F7", "#2C2C2C"],
+                badge: null,
+                stock: 10
+            },
+            {
+                id: 6,
                 name: "iPhone 15 Pro",
                 description: "Tela de 6,1. Chip A17 Pro. Titânio.",
                 price: 7999.00,
                 originalPrice: 8999.00,
-                image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium?wid=5120&hei=2880&fmt=webp&qlt=70&.v=1692845704760",
+                image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium?wid=5120&hei=2880&fmt=jpeg&qlt=90",
                 colors: ["#8B7F76", "#4A4A4A", "#F5F5F7", "#2C2C2C"],
                 badge: "Mais Vendido",
                 stock: 15
             },
             {
-                id: 3,
+                id: 7,
+                name: "iPhone 15 Plus",
+                description: "Tela de 6,7. Chip A16 Bionic. Câmera dupla de 48MP.",
+                price: 6499.00,
+                originalPrice: 7499.00,
+                image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch-pink?wid=5120&hei=2880&fmt=jpeg&qlt=90",
+                colors: ["#FFB6C1", "#87CEEB", "#98FB98", "#DDA0DD", "#F5F5F7"],
+                badge: null,
+                stock: 12
+            },
+            {
+                id: 8,
                 name: "iPhone 15",
                 description: "Tela de 6,1. Chip A16 Bionic. Câmera dupla.",
                 price: 5999.00,
                 originalPrice: 6999.00,
-                image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch-pink?wid=5120&hei=2880&fmt=webp&qlt=70&.v=1692923780378",
+                image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch-pink?wid=5120&hei=2880&fmt=jpeg&qlt=90",
                 colors: ["#FFB6C1", "#87CEEB", "#98FB98", "#DDA0DD", "#F5F5F7"],
                 badge: null,
                 stock: 20
             },
+            // ========== LINHA iPHONE 14 ==========
             {
-                id: 4,
+                id: 9,
+                name: "iPhone 14 Plus",
+                description: "Tela de 6,7. Chip A15 Bionic. Bateria para o dia todo.",
+                price: 5499.00,
+                originalPrice: 6499.00,
+                image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-finish-select-202209-6-7inch-midnight?wid=5120&hei=2880&fmt=jpeg&qlt=90",
+                colors: ["#191970", "#DC143C", "#87CEEB", "#F5F5F7", "#DDA0DD"],
+                badge: null,
+                stock: 10
+            },
+            {
+                id: 10,
                 name: "iPhone 14",
                 description: "Tela de 6,1. Chip A15 Bionic. Ótimo custo-benefício.",
                 price: 4999.00,
                 originalPrice: 5999.00,
-                image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-midnight?wid=5120&hei=2880&fmt=webp&qlt=70&.v=1692845694698",
+                image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-midnight?wid=5120&hei=2880&fmt=jpeg&qlt=90",
                 colors: ["#191970", "#DC143C", "#87CEEB", "#F5F5F7"],
                 badge: "Promoção",
                 stock: 8
             },
+            // ========== iPHONE SE ==========
             {
-                id: 5,
+                id: 11,
+                name: "iPhone SE (3ª geração)",
+                description: "Tela de 4,7. Chip A15 Bionic. Touch ID. O iPhone mais acessível.",
+                price: 3499.00,
+                originalPrice: 4299.00,
+                image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-se-finish-select-202207-midnight?wid=5120&hei=2880&fmt=jpeg&qlt=90",
+                colors: ["#2C2C2C", "#DC143C", "#F5F5F7"],
+                badge: "Melhor Preço",
+                stock: 25
+            },
+            // ========== APPLE WATCH ==========
+            {
+                id: 12,
+                name: "Apple Watch Ultra 2",
+                description: "Caixa de 49mm em titânio. GPS + Celular. O mais resistente.",
+                price: 9299.00,
+                originalPrice: 10299.00,
+                image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ultra-case-unselect-gallery-1-202409?wid=1000&hei=1000&fmt=jpeg&qlt=90",
+                colors: ["#E8833A", "#2C2C2C", "#556B2F"],
+                badge: "Premium",
+                stock: 5
+            },
+            {
+                id: 13,
+                name: "Apple Watch Series 10",
+                description: "Tela maior e mais fina. Chip S10. Detecção de apneia do sono.",
+                price: 5299.00,
+                originalPrice: 5999.00,
+                image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/s10-case-unselect-gallery-1-202409?wid=1000&hei=1000&fmt=jpeg&qlt=90",
+                colors: ["#C4AAA0", "#2C2C2C", "#C0C0C0"],
+                badge: "Novo",
+                stock: 10
+            },
+            {
+                id: 14,
+                name: "Apple Watch SE (2ª geração)",
+                description: "Caixa de 40mm ou 44mm. Chip S8. O Apple Watch essencial.",
+                price: 3299.00,
+                originalPrice: 3799.00,
+                image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/se-case-unselect-gallery-1-202409?wid=1000&hei=1000&fmt=jpeg&qlt=90",
+                colors: ["#2C2C2C", "#F5F5F7", "#C0C0C0"],
+                badge: "Melhor Custo",
+                stock: 18
+            },
+            // ========== ACESSÓRIOS ==========
+            {
+                id: 15,
                 name: "AirPods Pro 2",
                 description: "Cancelamento ativo de ruído. Áudio espacial.",
                 price: 1899.00,
@@ -1176,12 +1402,12 @@
                 stock: 30
             },
             {
-                id: 6,
+                id: 16,
                 name: "Carregador USB-C 20W",
                 description: "Carregamento rápido para iPhone.",
                 price: 199.00,
                 originalPrice: 349.00,
-                image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MU7T2_GEO_BR?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1542406417329",
+                image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MU7T2?wid=1144&hei=1144&fmt=jpeg&qlt=90",
                 colors: ["#F5F5F7"],
                 badge: "Essencial",
                 stock: 50
